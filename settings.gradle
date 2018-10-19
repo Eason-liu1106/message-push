@@ -1,0 +1,5 @@
+rootProject.name = 'message-push'
+include 'server'
+include 'mail'
+include 'core'
+

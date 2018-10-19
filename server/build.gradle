@@ -1,0 +1,30 @@
+group 'org.eason'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+//    mavenCentral()
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+//    maven {
+//        url 'https://plugins.gradle.org/m2/'
+//    }
+//    maven {
+//        url 'https://repo.spring.io/libs-milestone'
+//    }
+}
+ext {
+    mailVerison = '2.0.2.RELEASE'
+    adminServerVersion = '2.0.0'
+
+}
+dependencies {
+    compile project(":core")
+    compile group: 'de.codecentric', name: 'spring-boot-admin-server', version: adminServerVersion
+    compile group: 'de.codecentric', name: 'spring-boot-admin-server-ui', version: adminServerVersion
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: mailVerison
+}

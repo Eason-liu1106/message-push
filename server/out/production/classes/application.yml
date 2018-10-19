@@ -1,0 +1,25 @@
+spring:
+
+  application:
+    name: sping-boot-admin-server
+  mail:
+        host: smtp.163.com
+        username: liujialin1106@163.com
+        password: LIUjialintest
+
+  boot:
+    admin:
+      #监控的断点有哪些
+      probed-endpoints: health, env, etrics, threaddump:dump, httptrace:trace,jolokia, info, logfile, refresh, flyway, liquibase, heapdump, loggers, auditevents
+      notify:
+        mail:
+          from: liujialin1106@163.com
+          to: liujialin1106@163.com
+  security:
+   user:
+    name: root
+    password: root
+
+server:
+  port: 8000
+

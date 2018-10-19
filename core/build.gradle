@@ -1,0 +1,22 @@
+group 'org.eason'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+ext {
+    commonVerison = '2.0.2.RELEASE'
+    adminClientVersion = '2.0.0'
+}
+repositories {
+//    mavenCentral()
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: commonVerison
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: commonVerison
+    compile group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: adminClientVersion
+}
