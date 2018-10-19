@@ -14,7 +14,11 @@ spring:
         discovery:
      #        ignored-services: turbine
           ignored-services: ss-erp-*,yjc-zhongjie,*jsp*,admin-discovery
-
+  mail:
+    host: smtp.163.com
+    username: liujialin1106@163.com
+    password: LIUjialintest
+    default-encoding: UTF-8
 server:
   port: 8001
 management:

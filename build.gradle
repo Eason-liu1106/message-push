@@ -1,18 +1,13 @@
 group 'org.eason'
-version '1.0-SNAPSHOT'
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
 
-sourceCompatibility = 1.8
+
 buildscript {
     ext {
         springBootVersion = '2.0.2.RELEASE'
     }
     repositories {
-        //mavenCentral()
+       // mavenCentral()
         //阿里云镜像
         maven {
             url 'http://maven.aliyun.com/nexus/content/groups/public/'
@@ -56,16 +51,37 @@ mybatisGenerator {
 configurations {
     mybatisGenerator
 }
-//打包源码
-task sourceJar(type: Jar) {
-    from sourceSets.main.allJava
-}
-dependencies{
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'maven-publish'
+    apply plugin: "io.spring.dependency-management"
 
-    //TODO spring boot 2.0 升级属性检查插件
-    compile('org.springframework.boot:spring-boot-properties-migrator')
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
-}
-jar{
-    enabled = true
+    version = '1.0.0-beta'
+//    version = '2.1.0-release'
+
+    //添加spring cloud支持
+//    dependencyManagement {
+//        imports {
+//            mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Finchley.M7'
+//        }
+//    }
+    //打包源码
+    task sourceJar(type: Jar) {
+        from sourceSets.main.allJava
+    }
+    dependencies{
+
+        //TODO spring boot 2.0 升级属性检查插件
+        compile('org.springframework.boot:spring-boot-properties-migrator')
+
+    }
+    jar{
+        enabled = true
+    }
+
+
 }
