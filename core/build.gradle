@@ -7,6 +7,7 @@ sourceCompatibility = 1.8
 ext {
     commonVerison = '2.0.2.RELEASE'
     adminClientVersion = '2.0.0'
+    swaggerVersion = '2.9.2'
 }
 repositories {
 //    mavenCentral()
@@ -19,4 +20,7 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: commonVerison
     compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: commonVerison
     compile group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: adminClientVersion
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: swaggerVersion
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: swaggerVersion
+
 }

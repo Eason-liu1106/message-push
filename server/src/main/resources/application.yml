@@ -17,6 +17,6 @@ spring:
           to: liujialin1106@163.com
 
 
-server:f
+server:
   port: 8000
 
