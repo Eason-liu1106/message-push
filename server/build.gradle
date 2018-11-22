@@ -21,6 +21,11 @@ ext {
     adminServerVersion = '2.0.0'
 
 }
+apply plugin: "com.arenagod.gradle.MybatisGenerator"
+mybatisGenerator {
+    verbose = true
+    configFile = 'src/main/resources/mybatis/generatorConfig.xml'
+}
 dependencies {
     compile project(":core")
     compile group: 'de.codecentric', name: 'spring-boot-admin-server', version: adminServerVersion

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- 配置文件路径 -->
+    <!--<properties resource="jdbc.properties"/>-->
+
+    <context id="context1" defaultModelType="flat">
+        <!--与数据库关键字同名时自动添加分隔符 ``-->
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <commentGenerator>
+            <!--注释中不生成时间信息，避免每次生成都要提交VCS-->
+            <!--<property name="suppressDate" value="true"/>-->
+            <!--注释中添加表字段注释-->
+            <!--<property name="addRemarkComments" value="true"/>-->
+            <!--不生成注释-->
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/user"
+                        userId="root"
+                        password="root"/>
+        <javaModelGenerator targetPackage="com.server.model" targetProject="src/main/java">
+
+        </javaModelGenerator>
+
+        <!--如存在同名文件会合并，自定义方法不会更改，@mbg.generated 标记的会被更新-->
+        <sqlMapGenerator targetPackage="com.sqlMapper.server" targetProject="src/main/resources"/>
+        <!--
+        type="XMLMAPPER"生成的接口将会依赖于生成的XML文件。
+        -->
+        <!--<javaClientGenerator targetPackage="" targetProject="src/main/java"
+                             type="XMLMAPPER">
+            <property name="rootInterface" value=""/>
+        </javaClientGenerator>-->
+        <!--<table tableName="%" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"/>-->
+        <table tableName="project_new" mapperName="projectNew" domainObjectName="projectNew" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false"/>
+    </context>
+</generatorConfiguration>

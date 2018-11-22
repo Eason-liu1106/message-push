@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sqlMapper.server.projectNew">
+  <resultMap id="BaseResultMap" type="com.server.model.projectNew">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="sys_json" jdbcType="OTHER" property="sysJson" />
+    <result column="tenant_json" jdbcType="OTHER" property="tenantJson" />
+    <result column="unit_json" jdbcType="OTHER" property="unitJson" />
+    <result column="tenant_id" jdbcType="INTEGER" property="tenantId" />
+    <result column="unit_id" jdbcType="INTEGER" property="unitId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_id" jdbcType="INTEGER" property="createId" />
+    <result column="last_update_time" jdbcType="TIMESTAMP" property="lastUpdateTime" />
+    <result column="last_update_id" jdbcType="INTEGER" property="lastUpdateId" />
+    <result column="remarks" jdbcType="VARCHAR" property="remarks" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, sys_json, tenant_json, unit_json, tenant_id, unit_id, create_time, create_id, 
+    last_update_time, last_update_id, remarks
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from project_new
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from project_new
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.server.model.projectNew">
+    insert into project_new (id, sys_json, tenant_json, 
+      unit_json, tenant_id, unit_id, 
+      create_time, create_id, last_update_time, 
+      last_update_id, remarks)
+    values (#{id,jdbcType=INTEGER}, #{sysJson,jdbcType=OTHER}, #{tenantJson,jdbcType=OTHER}, 
+      #{unitJson,jdbcType=OTHER}, #{tenantId,jdbcType=INTEGER}, #{unitId,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=INTEGER}, #{lastUpdateTime,jdbcType=TIMESTAMP}, 
+      #{lastUpdateId,jdbcType=INTEGER}, #{remarks,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.server.model.projectNew">
+    insert into project_new
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="sysJson != null">
+        sys_json,
+      </if>
+      <if test="tenantJson != null">
+        tenant_json,
+      </if>
+      <if test="unitJson != null">
+        unit_json,
+      </if>
+      <if test="tenantId != null">
+        tenant_id,
+      </if>
+      <if test="unitId != null">
+        unit_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createId != null">
+        create_id,
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time,
+      </if>
+      <if test="lastUpdateId != null">
+        last_update_id,
+      </if>
+      <if test="remarks != null">
+        remarks,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="sysJson != null">
+        #{sysJson,jdbcType=OTHER},
+      </if>
+      <if test="tenantJson != null">
+        #{tenantJson,jdbcType=OTHER},
+      </if>
+      <if test="unitJson != null">
+        #{unitJson,jdbcType=OTHER},
+      </if>
+      <if test="tenantId != null">
+        #{tenantId,jdbcType=INTEGER},
+      </if>
+      <if test="unitId != null">
+        #{unitId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null">
+        #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="lastUpdateTime != null">
+        #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateId != null">
+        #{lastUpdateId,jdbcType=INTEGER},
+      </if>
+      <if test="remarks != null">
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.server.model.projectNew">
+    update project_new
+    <set>
+      <if test="sysJson != null">
+        sys_json = #{sysJson,jdbcType=OTHER},
+      </if>
+      <if test="tenantJson != null">
+        tenant_json = #{tenantJson,jdbcType=OTHER},
+      </if>
+      <if test="unitJson != null">
+        unit_json = #{unitJson,jdbcType=OTHER},
+      </if>
+      <if test="tenantId != null">
+        tenant_id = #{tenantId,jdbcType=INTEGER},
+      </if>
+      <if test="unitId != null">
+        unit_id = #{unitId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null">
+        create_id = #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="lastUpdateTime != null">
+        last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="lastUpdateId != null">
+        last_update_id = #{lastUpdateId,jdbcType=INTEGER},
+      </if>
+      <if test="remarks != null">
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.server.model.projectNew">
+    update project_new
+    set sys_json = #{sysJson,jdbcType=OTHER},
+      tenant_json = #{tenantJson,jdbcType=OTHER},
+      unit_json = #{unitJson,jdbcType=OTHER},
+      tenant_id = #{tenantId,jdbcType=INTEGER},
+      unit_id = #{unitId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_id = #{createId,jdbcType=INTEGER},
+      last_update_time = #{lastUpdateTime,jdbcType=TIMESTAMP},
+      last_update_id = #{lastUpdateId,jdbcType=INTEGER},
+      remarks = #{remarks,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
