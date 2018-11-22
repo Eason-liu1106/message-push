@@ -34,6 +34,9 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
     map-underscore-to-camel-case: true
+jdbc:
+  mysql:
+    url: jdbc:mysql://localhost:3306/user
 server:
   port: 8000
 
