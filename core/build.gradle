@@ -22,6 +22,4 @@ dependencies {
     compile group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: adminClientVersion
     compile group: 'io.springfox', name: 'springfox-swagger2', version: swaggerVersion
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: swaggerVersion
-
-
 }
