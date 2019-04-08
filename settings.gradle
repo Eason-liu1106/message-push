@@ -3,4 +3,5 @@ include 'server'
 include 'mail'
 include 'core'
 include 'im'
+include 'register-server'
 

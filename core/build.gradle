@@ -5,8 +5,8 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 ext {
-    commonVerison = '2.0.2.RELEASE'
-    adminClientVersion = '2.0.0'
+    commonVerison = '2.1.4.RELEASE'
+    adminClientVersion = '2.1.3'
     swaggerVersion = '2.9.2'
 }
 repositories {

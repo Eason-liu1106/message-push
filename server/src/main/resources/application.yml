@@ -6,7 +6,7 @@ spring:
         host: smtp.163.com
         username: liujialin1106@163.com
         password: LIUjialintest
-
+  
   boot:
     admin:
       #监控的断点有哪些
@@ -34,13 +34,12 @@ mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
     map-underscore-to-camel-case: true
-db:
-  mysql:
-    url: jdbc:mysql://localhost:3306/user
-    userId: root
-    password: root
-    driver: com.mysql.jdbc.Driver
-
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8000
 
