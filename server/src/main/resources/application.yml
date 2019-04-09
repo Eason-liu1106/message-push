@@ -2,11 +2,15 @@ spring:
 
   application:
     name: sping-boot-admin-server
+  security:
+    user:
+      name: root
+      password: root
   mail:
         host: smtp.163.com
         username: liujialin1106@163.com
         password: LIUjialintest
-  
+
   boot:
     admin:
       #监控的断点有哪些
@@ -35,11 +39,25 @@ mybatis:
     log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
     map-underscore-to-camel-case: true
 eureka:
+  instance:
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
+    lease-renewal-interval-in-seconds: 10
+    health-check-url-path: /actuator/health
   client:
-    register-with-eureka: true
-    fetch-registry: true
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
 server:
   port: 8000
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

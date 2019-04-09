@@ -23,8 +23,10 @@ ext {
 
 dependencies {
     compile project(":core")
-    compile group: 'de.codecentric', name: 'spring-boot-admin-server', version: adminServerVersion
-    compile group: 'de.codecentric', name: 'spring-boot-admin-server-ui', version: adminServerVersion
+    compile group: 'de.codecentric', name: 'spring-boot-admin-starter-server', version: '2.1.4'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '2.1.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.4.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.1.4.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.4.RELEASE'
 
 }
