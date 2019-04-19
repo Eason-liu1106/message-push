@@ -20,12 +20,12 @@ import javax.mail.internet.MimeMessage;
 public class MailSendImpl implements MailSend {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
-    private JavaMailSender mailSender;
+    JavaMailSender javaMailSender;
+
     /**
-     *
      * @param mailHtmlDto 邮件参数实体
-     * @author  JialinLiu
-     * @date  2018/10/22 0022 18:13
+     * @author JialinLiu
+     * @date 2018/10/22 0022 18:13
      */
     @Override
     public void sendHtmlMail(MailHtmlDto mailHtmlDto) throws MessagingException {

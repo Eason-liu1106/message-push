@@ -16,6 +16,11 @@ repositories {
 
 dependencies {
     compile project(":core")
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: mailVerison
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version:  '2.1.4.RELEASE'
     compile group: 'com.alibaba', name: 'fastjson', version: '1.2.47'
+    compile group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '2.1.1.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.4.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.4.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.1.4.RELEASE'
 }

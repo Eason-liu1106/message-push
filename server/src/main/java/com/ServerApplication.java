@@ -18,7 +18,6 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
  * @date 2018/5/23 0023 20:06
  */
 @EnableAdminServer
-@SpringBootApplication
 @EnableDiscoveryClient
 public class ServerApplication {
     public static void main(String[] args){

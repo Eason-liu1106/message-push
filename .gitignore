@@ -6,3 +6,4 @@
 *.iml
 */out
 message-push.iml
+*.jar
