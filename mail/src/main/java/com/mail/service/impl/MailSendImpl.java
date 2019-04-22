@@ -20,7 +20,7 @@ import javax.mail.internet.MimeMessage;
 public class MailSendImpl implements MailSend {
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
     @Autowired
-    JavaMailSender javaMailSender;
+    private JavaMailSender mailSender;
 
     /**
      * @param mailHtmlDto 邮件参数实体

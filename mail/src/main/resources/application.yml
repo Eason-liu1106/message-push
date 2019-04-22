@@ -5,6 +5,11 @@ spring:
     user:
       name: root
       password: root
+  mail:
+    password: LIUjialintest
+    host: smtp.163.com
+    username: liujialin1106@163.com
+
 eureka:
   client:
     register-with-eureka: true
@@ -18,11 +23,6 @@ eureka:
       user:
         name: ${spring.security.user.name}
         password: ${spring.security.user.password}
-  mail:
-    host: smtp.163.com
-    username: liujialin1106@163.com
-    password: LIUjialintest
-    default-encoding: UTF-8
 server:
   port: 8001
 management:
