@@ -7,9 +7,10 @@ spring:
       name: root
       password: root
   mail:
-        host: smtp.163.com
-        username: liujialin1106@163.com
-        password: LIUjialintest
+    host: smtp.163.com
+    username: liujialin1106@163.com
+    password: LIUjialintest
+    port: 25 #465或者994
 
   boot:
     admin:

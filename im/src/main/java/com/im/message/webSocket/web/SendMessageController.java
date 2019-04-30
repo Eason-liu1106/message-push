@@ -3,9 +3,15 @@ package com.im.message.webSocket.web;
 
 import com.common.web.client.RestClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -17,14 +23,19 @@ import java.util.Map;
 @RestController
 @RequestMapping("api/send")
 public class SendMessageController {
-    private final static String MAIL_DOMAIN = "http://SPRING-BOOT-ADMING-MAIL";
+    private final static String MAIL_DOMAIN = "http://SPRING-BOOT-ADMIN-MAIL";
+    //    @Autowired
+//    RestClient restClient;
     @Autowired
-    RestClient restClient;
+    RestTemplate restTemplate;
 
     @PostMapping("hello")
     public void hello() {
-        Map<String, Object> params = new HashMap<>(2);
+        Map<String, Object> params = new HashMap<>(1);
         params.put("hello", "hello");
-        Object o = restClient.getForJsonResult(MAIL_DOMAIN + "/api/mail/hello", params).getData();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<Map> requestEntity = new HttpEntity<>(params, headers);
+        restTemplate.exchange(MAIL_DOMAIN + "/api/mail/hello", HttpMethod.POST, requestEntity, String.class);
     }
 }

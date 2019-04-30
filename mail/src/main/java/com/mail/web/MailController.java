@@ -36,9 +36,9 @@ public class MailController {
 
     @PostMapping("hello")
     public void hello(@RequestBody Map<String, Object> params, HttpServletRequest request) {
-        System.out.println(params);
+        System.out.println(params+"8001");
         System.out.println(params.size());
-//        Map<String, Object> params = new HashMap<>(2);
+        //Map<String, Object> params = new HashMap<>(2);
 //        params.put("hello", "hello");
 //        Object o = restClient.getForJsonResult(MAIL_DOMAIN + "api/send/hello", params).getData();
     }
