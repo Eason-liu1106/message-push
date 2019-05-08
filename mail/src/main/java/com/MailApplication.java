@@ -13,8 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @author LJL
  * @date 2018/5/23 0023 20:06
  */
-@SpringBootApplication(exclude={DataSourceAutoConfiguration.class},scanBasePackages = "com.*")
-@Configuration
+@SpringBootApplication(scanBasePackages = "com.*")
 @EnableDiscoveryClient
 public class MailApplication {
     public static void main(String[] args){

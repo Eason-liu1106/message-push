@@ -1,11 +1,10 @@
 spring:
   application:
-    name: sping-boot-admin-websocket
+    name: spring-boot-admin-websocket
   security:
     user:
       name: root
       password: root
-
 eureka:
   client:
     register-with-eureka: true

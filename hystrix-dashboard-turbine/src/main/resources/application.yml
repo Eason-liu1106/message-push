@@ -1,6 +1,6 @@
 spring:
   application:
-    name: spring-boot-admin-websocket
+    name: spring-boot-hystrix-dashboard-turbine
   security:
     user:
       name: root
@@ -19,7 +19,7 @@ eureka:
         name: ${spring.security.user.name}
         password: ${spring.security.user.password}
 server:
-  port: 8002
+  port: 9000
 management:
   endpoint:
     health:
@@ -28,3 +28,10 @@ management:
     web:
       exposure:
         include: "*"
+turbine:
+  app-config:
+    - spring-boot-admin-websocket
+    - spring-boot-admin-mail
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")

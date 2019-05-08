@@ -6,4 +6,5 @@ include 'im'
 include 'register-server'
 include 'common-web'
 include 'common-argument'
+include 'hystrix-dashboard-turbine'
 

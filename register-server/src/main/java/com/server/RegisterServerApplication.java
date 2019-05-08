@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Configuration;
  * @author LJL
  * @date 2018/5/23 0023 20:06
  */
-@Configuration
 @SpringBootApplication
 @EnableEurekaServer
 public class RegisterServerApplication {

@@ -2,6 +2,7 @@ package com.im.message.webSocket.web;
 
 
 import com.common.web.client.RestClient;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -30,12 +31,18 @@ public class SendMessageController {
     RestTemplate restTemplate;
 
     @PostMapping("hello")
-    public void hello() {
+    @HystrixCommand(fallbackMethod = "defaulGetReprotByCityId")
+    public String hello() {
         Map<String, Object> params = new HashMap<>(1);
         params.put("hello", "hello");
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<Map> requestEntity = new HttpEntity<>(params, headers);
         restTemplate.exchange(MAIL_DOMAIN + "/api/mail/hello", HttpMethod.POST, requestEntity, String.class);
+        return "success";
+    }
+
+    public String defaulGetReprotByCityId() {
+        return "降级";
     }
 }

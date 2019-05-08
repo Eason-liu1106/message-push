@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.eason'
+version 'unspecified'
+
+sourceCompatibility = 1.8
+
+repositories {
+    //mavenCentral()
+    maven {
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix', version: '2.1.1.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix-dashboard', version: '2.1.1.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-netflix-turbine', version: '2.1.1.RELEASE'
+    compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '2.1.1.RELEASE'
+    compile group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: '2.1.4'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.4.RELEASE'
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.4.RELEASE'
+
+}
