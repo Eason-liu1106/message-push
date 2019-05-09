@@ -26,7 +26,9 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.1.4.RELEASE'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix', version: '2.1.1.RELEASE'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-hystrix-dashboard', version: '2.1.1.RELEASE'
-    compile group: 'org.springframework.cloud', name: 'spring-cloud-netflix-turbine', version: '2.1.1.RELEASE'
+    compile group: 'de.codecentric', name: 'spring-boot-admin-starter-client', version: '2.1.4'
+
+    // compile group: 'org.springframework.cloud', name: 'spring-cloud-netflix-turbine', version: '2.1.1.RELEASE'
 
 
 }

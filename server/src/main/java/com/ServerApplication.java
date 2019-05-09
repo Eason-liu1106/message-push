@@ -21,7 +21,7 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 @EnableDiscoveryClient
 @SpringBootApplication(scanBasePackages = {"com.*"})
 public class ServerApplication {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         SpringApplication.run(ServerApplication.class, args);
 
     }

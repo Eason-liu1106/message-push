@@ -29,9 +29,7 @@ management:
       exposure:
         include: "*"
 turbine:
-  app-config:
-    - spring-boot-admin-websocket
-    - spring-boot-admin-mail
+  app-config: spring-boot-admin-mail,spring-boot-admin-websocket
   aggregator:
     cluster-config: default
   cluster-name-expression: new String("default")
