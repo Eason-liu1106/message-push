@@ -25,10 +25,10 @@ import java.util.Map;
 @RequestMapping("api/send")
 public class SendMessageController {
     private final static String MAIL_DOMAIN = "http://SPRING-BOOT-ADMIN-MAIL";
-    //    @Autowired
-//    RestClient restClient;
     @Autowired
-    RestTemplate restTemplate;
+    RestClient restClient;
+//    @Autowired
+    // RestTemplate restTemplate;
 
     @PostMapping("hello")
     @HystrixCommand(fallbackMethod = "defaulGetReprotByCityId")
@@ -38,7 +38,7 @@ public class SendMessageController {
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpEntity<Map> requestEntity = new HttpEntity<>(params, headers);
-        restTemplate.exchange(MAIL_DOMAIN + "/api/mail/hello", HttpMethod.POST, requestEntity, String.class);
+        restClient.exchange(MAIL_DOMAIN + "/api/mail/hello", HttpMethod.POST, requestEntity, String.class);
         return "success";
     }
 

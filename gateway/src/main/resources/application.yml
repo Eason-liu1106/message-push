@@ -1,16 +1,17 @@
 spring:
   application:
-    name: spring-boot-admin-mail
+    name: spring-boot-admin-gateway
   security:
     user:
       name: root
       password: root
-  mail:
-    password: LIUjialintest
-    host: smtp.163.com
-    username: liujialin1106@163.com
-    port: 25
-
+  cloud:
+    gateway:
+      routes:
+        - id: neo_route
+          uri: http://www.ityouknow.com
+          predicates:
+            - Path=/spring-cloud
 eureka:
   client:
     register-with-eureka: true
@@ -25,7 +26,7 @@ eureka:
         name: ${spring.security.user.name}
         password: ${spring.security.user.password}
 server:
-  port: 8001
+  port: 7000
 management:
   endpoint:
     health:

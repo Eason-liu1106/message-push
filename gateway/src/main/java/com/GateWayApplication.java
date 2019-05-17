@@ -14,13 +14,10 @@ import org.springframework.context.annotation.Configuration;
  * @date 2018/5/23 0023 20:06
  */
 @SpringBootApplication(scanBasePackages = {"com.*"}, exclude = {SecurityAutoConfiguration.class})
-@Configuration
 @EnableDiscoveryClient
-//@EnableHystrixDashboard
-@EnableCircuitBreaker
-public class MailApplication {
+public class GateWayApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MailApplication.class, args);
+        SpringApplication.run(GateWayApplication.class, args);
 
     }
 }

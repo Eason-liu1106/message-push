@@ -30,10 +30,10 @@ public class WebSocketApplication {
         SpringApplication.run(WebSocketApplication.class, args);
 
     }
-
-    @Bean
-    @LoadBalanced
-    RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+//
+//    @Bean
+//    @LoadBalanced
+//    RestTemplate restTemplate() {
+//        return new RestTemplate();
+//    }
 }
