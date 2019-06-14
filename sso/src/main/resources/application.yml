@@ -1,0 +1,59 @@
+spring:
+
+  application:
+    name: sping-boot-admin-sso
+  security:
+    user:
+      name: root
+      password: root
+
+  boot:
+    admin:
+      #监控的断点有哪些
+      probed-endpoints: health, env, etrics, threaddump:dump, httptrace:trace,jolokia, info, logfile, refresh, flyway, liquibase, heapdump, loggers, auditevents
+      notify:
+        mail:
+          from: liujialin1106@163.com
+          to: liujialin1106@163.com
+
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    basename: i18n.msgs
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 16MB
+      max-request-size: 20MB
+mybatis:
+  mapper-locations:
+    - classpath*:/com/sqlMapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+eureka:
+  instance:
+    metadata-map:
+      user:
+        name: ${spring.security.user.name}
+        password: ${spring.security.user.password}
+    lease-renewal-interval-in-seconds: 10
+    health-check-url-path: /actuator/health
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+server:
+  port: 9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS

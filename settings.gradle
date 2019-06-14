@@ -8,4 +8,6 @@ include 'common-web'
 include 'common-argument'
 include 'hystrix-dashboard-turbine'
 include 'gateway'
+include 'sso'
+include 'common-core'
 

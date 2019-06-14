@@ -1,13 +1,12 @@
 group 'org.eason'
 
 
-
 buildscript {
     ext {
         springBootVersion = '2.1.4.RELEASE'
     }
     repositories {
-       // mavenCentral()
+        // mavenCentral()
         //阿里云镜像
         maven {
             url 'http://maven.aliyun.com/nexus/content/groups/public/'
@@ -73,13 +72,13 @@ subprojects {
     task sourceJar(type: Jar) {
         from sourceSets.main.allJava
     }
-    dependencies{
+    dependencies {
 
         //TODO spring boot 2.0 升级属性检查插件
         compile('org.springframework.boot:spring-boot-properties-migrator')
 
     }
-    jar{
+    jar {
         enabled = true
     }
 
