@@ -8,11 +8,14 @@ dependencies {
     compile project(":core")
     compile project(":common-web")
     compile project(":common-argument")
+    compile project(":common-util")
     compile group: 'de.codecentric', name: 'spring-boot-admin-starter-server', version: '2.1.4'
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '2.1.1.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.1.4.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.1.4.RELEASE'
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.4.RELEASE'
     compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.1.1'
+    compile group: 'redis.clients', name: 'jedis', version: '3.1.0-m3'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.1.4.RELEASE'
 
 }
