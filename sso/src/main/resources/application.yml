@@ -1,5 +1,15 @@
 spring:
-
+  #redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        min-idle: 0
+        max-idle: 8
   application:
     name: sping-boot-admin-sso
   security:
@@ -57,14 +67,3 @@ management:
   endpoint:
     health:
       show-details: ALWAYS
-  #redis配置
-  redis:
-    host: 127.0.0.1
-    port: 6379
-    password:
-    jedis:
-      pool:
-        max-active: 8
-        max-wait: -1ms
-        min-idle: 0
-        max-idle: 8

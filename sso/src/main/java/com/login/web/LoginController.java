@@ -8,6 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.redis.RedisProperties;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import redis.clients.jedis.Jedis;
@@ -28,7 +29,8 @@ public class LoginController {
     private static final Log log = LogFactory.getLog(LoginController.class);
     @Autowired
     private UserService userService;
-
+    @Autowired
+    private RedisTemplate redisTemplate;
     private JedisPool jedisPool = new JedisPool();
 
     @PostMapping
@@ -59,6 +61,7 @@ public class LoginController {
             log.info("tokenId: " + tokenId + " jwt: " + jwtValue);
             if (jwtValue != null) {
                 Jedis jedis = jedisPool.getResource();
+                redisTemplate.opsForValue().set(tokenId, user.toString());
                 jedis.set(tokenId, user.toString());
                 jedis.expire(tokenId, 1800);
                 log.info("查看key的剩余生存时间：" + jedis.ttl(tokenId));
